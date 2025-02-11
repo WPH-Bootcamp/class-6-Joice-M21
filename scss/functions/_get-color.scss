@@ -9,12 +9,7 @@
   // if they are not valid warn 'Invalid color type or level' and return null
   // null is a special value in Sass that means nothing, and it is used to represent the absence of a value, you need to return null if the type or level is not valid
 
-  // To avoid invalid type
-  @if list.index($color-keys, $type) == null {
-    @warn 'Invalid color type: #{$type}';
-    @return null;
-  }
-
+ 
   // To avoid invalid level
   @if map.get(map.get($color-pallete, $type), $level) == null {
     @warn 'Invalid color level: #{$level} for type #{$type}';
